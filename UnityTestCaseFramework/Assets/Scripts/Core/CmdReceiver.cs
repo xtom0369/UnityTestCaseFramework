@@ -8,7 +8,7 @@ namespace UnityTestCaseFramework
 	/// 命令枚举
 	/// </summary>
 	/// <author>xtom</author>
-	public class CmdReceiver
+	public partial class CmdReceiver
 	{
 
 		public CmdReceiver()

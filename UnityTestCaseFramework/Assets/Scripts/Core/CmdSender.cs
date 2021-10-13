@@ -8,7 +8,7 @@ namespace UnityTestCaseFramework
 	/// 指令发送器
 	/// </summary>
 	/// <author>xtom</author>
-	public class CmdSender
+	public partial class CmdSender
 	{
 		/// <summary>
 		/// 指令发送器单例
@@ -22,14 +22,9 @@ namespace UnityTestCaseFramework
 
 		}
 
-		public void Send(EnumCmdType type) 
-		{ 
-			
-		}
-
-		public void Send<T0>(EnumCmdType type, T0 arg0)
+		public void SendCmd(EnumCmdType type) 
 		{
-
+		
 		}
 	}
 }

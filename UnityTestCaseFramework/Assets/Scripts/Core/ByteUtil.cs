@@ -2,10 +2,13 @@
 using System.Collections;
 using System;
 using System.IO;
-//using ICSharpCode.SharpZipLib.GZip;
 
 namespace UnityTestCaseFramework
 {
+    /// <summary>
+    /// 二进制工具类，用于将不同类型转为bytes类型
+    /// </summary>
+    /// <author>xtom</author>
     public class ByteUtil
     {
         static public int Bool2Bytes(bool value, byte[] bytes, int offset)
@@ -65,28 +68,6 @@ namespace UnityTestCaseFramework
             bytes[offset + 3] = (byte)((value >> 24) & 0xff);
             return sizeof(int);
         }
-        /* 暂时不需要压缩和解压功能
-        public static byte[] Compress(byte[] bytes, int offset, int length)
-        {
-            MemoryStream ms = new MemoryStream();
-            GZipOutputStream compressedzipStream = new GZipOutputStream(ms);
-            compressedzipStream.Write(bytes, offset, length);
-            compressedzipStream.Close();
-            return ms.ToArray();
-        }
-
-        public static byte[] UnCompress(byte[] byteArray, int offset, int length)
-        {
-            GZipInputStream gzi = new GZipInputStream(new MemoryStream(byteArray, offset, length));
-            MemoryStream re = new MemoryStream(50000);
-            int count;
-            byte[] data = new byte[50000];
-            while ((count = gzi.Read(data, 0, data.Length)) != 0)
-                re.Write(data, 0, count);
-            byte[] overarr = re.ToArray();
-            return overarr;
-        }
-        */
     }
 }
 

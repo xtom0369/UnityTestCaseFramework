@@ -10,22 +10,31 @@ namespace UnityTestCaseFramework
 	/// <author>xtom</author>
 	public partial class CmdSender
 	{
-		/// <summary>
-		/// 指令发送器单例
-		/// </summary>
-		public CmdSender Inst { get { return _inst ?? (_inst = new CmdSender()); } }
+        /// <summary>
+        /// 指令发送器单例
+        /// </summary>
+        public CmdSender Inst { get { return _inst ?? (_inst = new CmdSender()); } }
+        CmdSender _inst;
 
-		CmdSender _inst;
+        BytesBuffer _buffer;
 
-		public CmdSender()
+        public CmdSender()
 		{
+            _buffer = new BytesBuffer(100);
+        }
 
-		}
-
-		public void SendCmd(EnumCmdType type) 
+        /// <summary>
+        /// 使用道具命令
+        /// </summary>
+        /// <param name="itemId"></param>
+        /// <param name="count"></param>
+        public void SendUseItemCmd(uint itemId, uint count) 
 		{
-		
-		}
-	}
+            //_buffer.WriteUInt32(curFrame);
+            _buffer.WriteByte((byte)EnumCmdType.USE_ITEM);
+            _buffer.WriteUInt32(itemId);
+            _buffer.WriteUInt32(count);
+        }
+    }
 }
 

@@ -8,6 +8,7 @@ namespace UnityTestCaseFramework
     /// <summary>
     /// 二进制缓冲区
     /// </summary>
+    /// <author>xtom</author>
     public class BytesBuffer
     {
         /// <summary>

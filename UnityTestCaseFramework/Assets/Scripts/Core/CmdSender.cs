@@ -17,15 +17,18 @@ namespace UnityTestCaseFramework
 
 		CmdSender _inst;
 
-		public CmdSender()
-		{
+        BytesBuffer _buffer;
 
+        public CmdSender()
+		{
+			_buffer = new BytesBuffer(100);
 		}
 
-		public void SendCmd(EnumCmdType type) 
+		public void SendUseItemCmd(EnumCmdType cmdType, uint itemId, uint count) 
 		{
-		
-		}
+			//_buffer.WriteUInt32(curFrame);
+			_buffer.WriteByte((byte)cmdType);
+        }
 	}
 }
 
